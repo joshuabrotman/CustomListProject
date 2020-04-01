@@ -69,6 +69,7 @@ namespace UnitTestProject2
 
             //act
             testList1.Add(5);
+            testList1.Add(43);
             actual = testList1[0];
 
 
@@ -88,8 +89,13 @@ namespace UnitTestProject2
             testList1.Add(43);
             testList1.Add(89);
             testList1.Add(11);
+            testList1.Add(19);
             //assert
+
+            Assert.AreEqual(8, testList1.ArrayCapacity);
         }
 
+
+        
     }
 }

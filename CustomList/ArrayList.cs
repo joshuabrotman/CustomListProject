@@ -36,26 +36,26 @@ namespace CustomList
 
 
         //indexer
-        public int this[int number]
+        public T this[int number]
         {
             get
             {
                 // This is invoked when accessing Layout with the [ ].
-                if (number >= 0 && number < _values.Length)
+                if (number >= 0 && number < internalArray.Length)
                 {
                     // Bounds were in range, so return the stored value.
-                    return _values[number];
+                    return internalArray[number];
                 }
-                // Return an error string.
-                return "Error";
+                // Return an error number.
+                throw new System.ArgumentException("Index out of bounds", "error");
             }
             set
             {
                 // This is invoked when assigning to Layout with the [ ].
-                if (number >= 0 && number < _values.Length)
+                if (number >= 0 && number < internalArray.Length)
                 {
                     // Assign to this element slot in the internal array.
-                    _values[number] = value;
+                    internalArray[number] = value;
                 }
             }
         }
