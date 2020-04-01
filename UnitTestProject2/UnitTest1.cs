@@ -63,6 +63,7 @@ namespace UnitTestProject2
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
         public void Remove_CheckTopElementsShiftDown_RemoveIndex1()
         {
             //arrange
@@ -81,8 +82,26 @@ namespace UnitTestProject2
             Assert.AreEqual(expected, actual);
         }
 
-
+        [TestMethod]
         public void Remove_CheckCountIsStillTheSame_RemoveNonExistentItem()
+        {
+            //arrange
+            int expected = 4;
+            int actual;
+            //act
+            ArrayList<int> testlist = new ArrayList<int>();
+            testlist.Add(99);
+            testlist.Add(43);
+            testlist.Add(12);
+            testlist.Add(22);
+            testlist.Remove(66);
+            actual = testlist.Count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_CheckOnlyOneRemoved_RemoveItemTwice()
         {
             //arrange
             int expected = 3;
@@ -93,7 +112,8 @@ namespace UnitTestProject2
             testlist.Add(43);
             testlist.Add(12);
             testlist.Add(22);
-            testlist.Remove(66);
+            testlist.Remove(22);
+            testlist.Remove(22);
             actual = testlist.Count;
 
             //assert
