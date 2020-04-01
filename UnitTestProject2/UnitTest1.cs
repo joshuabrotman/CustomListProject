@@ -51,11 +51,12 @@ namespace UnitTestProject2
 
             //act
             testList1.Add(5);
-            actual = testList1[0];
+            testList1.Add(54);
+            actual = testList1[1];
 
 
             //assert
-            Assert.AreEqual(5, actual);
+            Assert.AreEqual(54, actual);
 
         }
 
@@ -79,7 +80,7 @@ namespace UnitTestProject2
         //test that capacity increases accordingly
 
         [TestMethod]
-        public void Add_CheckCapacity_DoesCapacityExpland()
+        public void Add_CheckCapacity_DoesCapacityExpand()
         {
             //arrange
             ArrayList<int> testList1 = new ArrayList<int>();

@@ -10,12 +10,30 @@ namespace CustomList
     {
 
         //member variables
-        private int count;
+        //private int count;
         private T[] internalArray;
         private int arrayCapacity;
+        private int count;
 
-        public int ArrayCapacity { get; set; }
-        public int Count { get; set; }
+        public int ArrayCapacity {
+            get
+            {
+                return arrayCapacity;
+            }
+            set
+            {
+                
+            }
+        }
+        public int Count { 
+            get 
+            {
+                return count;
+            }
+            set 
+            { 
+            } 
+        }
 
 
 
@@ -31,6 +49,26 @@ namespace CustomList
         public void Add(T ValueToAdd)
         {
 
+            //if there is out of bounds exception, increase capacity then add
+            if (count == arrayCapacity)
+            {
+                // double the array capacity
+                arrayCapacity *= 2;
+                //create temporary array
+                T[] tempArray = new T[arrayCapacity];
+
+                //transfer old data into temp array
+                
+                //Step through and set temparray values to the values from internalArray
+                for(int i = 0; i<count;i++)
+                {
+                    tempArray[i] = internalArray[i];
+                }
+
+                internalArray = tempArray;
+            }
+            internalArray[Count] = ValueToAdd;
+            count++;
         }
 
 
