@@ -54,23 +54,34 @@ namespace CustomList
             //get the index of requested removal
             for (int i = 0; i < count; i++)
             {
-                if (EqualityComparer<T>.Default.Equals(internalArray[i], ValueToRemove));
+               if (EqualityComparer<T>.Default.Equals(internalArray[i], ValueToRemove))
                 {
                     indexOfValueToRemove = i;
+                    
                 }
+
             }
             //if indexofvaluetoremove is not empty
             //shift list down, replacing the old values
-            if(indexOfValueToRemove >= 0)
+            if (indexOfValueToRemove >= 0)
             {
-                for(int i = indexOfValueToRemove; i <= count; i++)
+                for (int j = indexOfValueToRemove; j < count; j++)
                 {
-                    internalArray[i] = internalArray[i + 1];
+                    if (count - 1 != j)
+                    {
+                        internalArray[j] = internalArray[j + 1];
+                    }
+                    else
+                    {
+                        internalArray[j] = default(T);
+                    }
                 }
+
+                //reduce count by one
+                count--;
             }
 
-            //reduce count by one
-            count--;
+            
 
         }
 
