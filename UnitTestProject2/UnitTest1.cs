@@ -8,6 +8,20 @@ namespace UnitTestProject2
     public class UnitTest1
     {
         [TestMethod]
+        public void OperatorPlusOverload_CheckConcatenate_AddTwoLists()
+        {
+            //arrange
+            ArrayList<int> list1 = new ArrayList<int>() { 1,2,3};
+            ArrayList<int> list2 = new ArrayList<int>() {4,5,6 };
+            ArrayList<int> list3 = new ArrayList<int>();
+            ArrayList<int> expected = new ArrayList<int>() { 1, 2, 3, 4, 5, 6 };
+            //act
+            list3 = list1 + list2;
+            //assert
+            Assert.AreEqual(expected,list3)
+        }
+
+        [TestMethod]
 
         public void ToString_Check5Digits_AddPositiveIntegers()
         {
