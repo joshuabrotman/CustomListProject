@@ -47,6 +47,25 @@ namespace CustomList
             internalArray = new T[arrayCapacity];
         }
 
+
+        //override plus operator
+
+        public static ArrayList<T> operator +(ArrayList<T> a1)
+        {
+
+        }
+
+        public override string ToString()
+        {
+            string newString = "";
+            for (int i = 0; i < count; i++)
+            {
+                newString = newString + Convert.ToString(internalArray[i]);
+            }
+
+            return newString;
+        }
+
         public void Remove(T ValueToRemove)
         {
             int indexOfValueToRemove = -1;

@@ -7,6 +7,24 @@ namespace UnitTestProject2
     [TestClass]
     public class UnitTest1
     {
+        [TestMethod]
+
+        public void ToString_Check5Digits_AddPositiveIntegers()
+        {
+            //arrange
+            string expected = "12345";
+            string actual = "";
+            //act
+            ArrayList<int> testlist = new ArrayList<int>();
+            testlist.Add(1);
+            testlist.Add(2);
+            testlist.Add(3);
+            testlist.Add(4);
+            testlist.Add(5);
+            actual = testlist.ToString();
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void Remove_CheckCountIsLower_RemovePositiveInteger()
