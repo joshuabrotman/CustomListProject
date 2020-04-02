@@ -11,14 +11,22 @@ namespace UnitTestProject2
         public void OperatorPlusOverload_CheckConcatenate_AddTwoLists()
         {
             //arrange
-            ArrayList<int> list1 = new ArrayList<int>() { 1,2,3};
-            ArrayList<int> list2 = new ArrayList<int>() {4,5,6 };
+            ArrayList<int> list1 = new ArrayList<int>();
+            ArrayList<int> list2 = new ArrayList<int>();
             ArrayList<int> list3 = new ArrayList<int>();
-            ArrayList<int> expected = new ArrayList<int>() { 1, 2, 3, 4, 5, 6 };
+            list1.Add(1);
+            list1.Add(2);
+            list2.Add(3);
+            list2.Add(4);
+            ArrayList<int> expected = new ArrayList<int>();
+            expected.Add(1);
+            expected.Add(2);
+            expected.Add(3);
+            expected.Add(4);
             //act
             list3 = list1 + list2;
             //assert
-            Assert.AreEqual(expected,list3)
+            Assert.AreEqual(expected, list3);
         }
 
         [TestMethod]

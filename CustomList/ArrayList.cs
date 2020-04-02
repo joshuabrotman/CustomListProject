@@ -50,9 +50,19 @@ namespace CustomList
 
         //override plus operator
 
-        public static ArrayList<T> operator +(ArrayList<T> a1)
+        public static ArrayList<T> operator+ (ArrayList<T> a1, ArrayList<T> a2)
         {
-
+            ArrayList<T> a3 = new ArrayList<T>();
+            //a3 = a1 , a2;
+            for (int i = 0; i < a1.count; i++)
+            {
+                a3.Add(a1[i]);
+            }
+            for (int i = 0; i < a2.count; i++)
+            {
+                a3.Add(a2[i]);
+            }
+            return a3;
         }
 
         public override string ToString()
