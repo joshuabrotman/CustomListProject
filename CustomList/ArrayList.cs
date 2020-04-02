@@ -46,10 +46,38 @@ namespace CustomList
             arrayCapacity = 4;
             internalArray = new T[arrayCapacity];
         }
+
+        public void Remove(T ValueToRemove)
+        {
+            int indexOfValueToRemove = -1;
+
+            //get the index of requested removal
+            for (int i = 0; i < count; i++)
+            {
+                if (EqualityComparer<T>.Default.Equals(internalArray[i], ValueToRemove));
+                {
+                    indexOfValueToRemove = i;
+                }
+            }
+            //if indexofvaluetoremove is not empty
+            //shift list down, replacing the old values
+            if(indexOfValueToRemove >= 0)
+            {
+                for(int i = indexOfValueToRemove; i <= count; i++)
+                {
+                    internalArray[i] = internalArray[i + 1];
+                }
+            }
+
+            //reduce count by one
+            count--;
+
+        }
+
         public void Add(T ValueToAdd)
         {
 
-            //if there is out of bounds exception, increase capacity then add
+            //if internal array is at capacity, increase capacity then add
             if (count == arrayCapacity)
             {
                 // double the array capacity
