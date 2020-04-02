@@ -60,7 +60,7 @@ namespace CustomList
             return result;
         }
 
-        //override minus operator
+        //overload minus operator
         public static ArrayList<T> operator- (ArrayList<T> a1, ArrayList<T> a2)
         {
             
@@ -74,7 +74,7 @@ namespace CustomList
         }
 
 
-        //override plus operator
+        //overload plus operator
 
         public static ArrayList<T> operator+ (ArrayList<T> a1, ArrayList<T> a2)
         {

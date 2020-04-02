@@ -31,9 +31,9 @@ namespace UnitTestProject2
             list3.Add(5);
             list3.Add(6);
             //act
-            actual = list1.Zip(list1,list2);
+            actual = list1.Zip(list1, list2);
             //assert
-            Assert.AreEqual(list3, actual);
+            Assert.AreEqual(list3.ToString(), actual.ToString());
 
         }
 
