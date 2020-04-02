@@ -48,6 +48,32 @@ namespace CustomList
         }
 
 
+        //zip two elements
+        public ArrayList<T> Zip(ArrayList<T> l1, ArrayList<T> l2)
+        {
+            ArrayList<T> result = new ArrayList<T>();
+            for (int i = 0; i < l1.count; i++)
+            {
+                result.Add(l1[i]);
+                result.Add(l2[i]);
+            }
+            return result;
+        }
+
+        //override minus operator
+        public static ArrayList<T> operator- (ArrayList<T> a1, ArrayList<T> a2)
+        {
+            
+            for (int i = 0; i < a2.count; i++)  
+            {
+                a1.Remove(a2[i]);
+            }
+
+            return a1;
+            
+        }
+
+
         //override plus operator
 
         public static ArrayList<T> operator+ (ArrayList<T> a1, ArrayList<T> a2)

@@ -8,6 +8,35 @@ namespace UnitTestProject2
     public class UnitTest1
     {
 
+        [TestMethod]
+        public void Zip_CheckTwoElementsZipTogether_CompareTwoLists()
+        {
+            //arrange
+            ArrayList<int> list1 = new ArrayList<int>();
+            ArrayList<int> list2 = new ArrayList<int>();
+            ArrayList<int> actual = new ArrayList<int>();
+            ArrayList<int> list3 = new ArrayList<int>();
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+
+            list2.Add(2);
+            list2.Add(4);
+            list2.Add(6);
+
+            list3.Add(1);
+            list3.Add(2);
+            list3.Add(3);
+            list3.Add(4);
+            list3.Add(5);
+            list3.Add(6);
+            //act
+            actual = list1.Zip(list1,list2);
+            //assert
+            Assert.AreEqual(list3, actual);
+
+        }
+
 
         [TestMethod]
 
@@ -16,7 +45,7 @@ namespace UnitTestProject2
             //arrange
             ArrayList<int> list1 = new ArrayList<int>();
             ArrayList<int> list2 = new ArrayList<int>();
-            ArrayList<int> list3 = new ArrayList<int>();
+            ArrayList<int> expected = new ArrayList<int>();
             ArrayList<int> actual = new ArrayList<int>();
             list1.Add(1);
             list1.Add(3);
@@ -26,15 +55,15 @@ namespace UnitTestProject2
             list2.Add(1);
             list2.Add(6);
 
-            list3.Add(3);
-            list3.Add(5);
+            expected.Add(3);
+            expected.Add(5);
 
 
 
             //act
             actual = list1 - list2;
             //assert
-            Assert.AreEqual(list3, actual);
+            Assert.AreEqual(expected.ToString(), actual.ToString());
         }
 
         [TestMethod]
