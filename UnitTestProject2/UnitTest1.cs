@@ -7,6 +7,36 @@ namespace UnitTestProject2
     [TestClass]
     public class UnitTest1
     {
+
+
+        [TestMethod]
+
+        public void OperatorMinusOverload_CheckDifference_CompareTwoLists()
+        {
+            //arrange
+            ArrayList<int> list1 = new ArrayList<int>();
+            ArrayList<int> list2 = new ArrayList<int>();
+            ArrayList<int> list3 = new ArrayList<int>();
+            ArrayList<int> actual = new ArrayList<int>();
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+            
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+
+            list3.Add(3);
+            list3.Add(5);
+
+
+
+            //act
+            actual = list1 - list2;
+            //assert
+            Assert.AreEqual(list3, actual);
+        }
+
         [TestMethod]
         public void OperatorPlusOverload_CheckConcatenate_AddTwoLists()
         {
@@ -26,7 +56,7 @@ namespace UnitTestProject2
             //act
             list3 = list1 + list2;
             //assert
-            Assert.AreEqual(expected, list3);
+            Assert.AreEqual(expected.ToString(), list3.ToString());
         }
 
         [TestMethod]
