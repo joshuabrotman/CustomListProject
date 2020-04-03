@@ -37,6 +37,33 @@ namespace UnitTestProject2
 
         }
 
+        [TestMethod]
+
+        public void OperatorMinusOverload_CheckString_CompareTwoLists()
+        {
+            //arrange
+            ArrayList<string> list1 = new ArrayList<string>();
+            ArrayList<string> list2 = new ArrayList<string>();
+            ArrayList<string> expected = new ArrayList<string>();
+            ArrayList<string> actual = new ArrayList<string>();
+            list1.Add("Totem");
+            list1.Add("Horse");
+            list1.Add("Extraction");
+
+            list2.Add("Turtle");
+            list2.Add("Extraction");
+            list2.Add("Totem");
+
+            expected.Add("Horse");
+
+
+
+            //act
+            actual = list1 - list2;
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
 
         [TestMethod]
 
@@ -67,6 +94,72 @@ namespace UnitTestProject2
         }
 
         [TestMethod]
+        public void OperatorMinusOverload_CheckDifferenceReverseOrder_CompareTwoLists()
+        {
+            //arrange
+            ArrayList<int> list1 = new ArrayList<int>();
+            ArrayList<int> list2 = new ArrayList<int>();
+            ArrayList<int> expected = new ArrayList<int>();
+            ArrayList<int> actual = new ArrayList<int>();
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+
+            expected.Add(2);
+            expected.Add(6);
+
+            //act
+            actual = list2 - list1;
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
+        [TestMethod]
+        public void OperatorPlusOverload_CheckAddStrings_AddTwoLists()
+        {
+            //arrange
+            ArrayList<String> list1 = new ArrayList<String>();
+            ArrayList<String> list2 = new ArrayList<String>();
+            ArrayList<String> actual = new ArrayList<String>();
+            list1.Add("Kangaroo");
+            list1.Add(" ");
+            list2.Add("Turtle");
+            list2.Add(" ");
+            ArrayList<String> expected = new ArrayList<String>();
+            expected.Add("Kangaroo Turtle ");
+            //act
+            actual = list1 + list2;
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
+        [TestMethod]
+        public void OperatorPlusOverload_CheckRemove_AddTwoLists()
+        {
+            //arrange
+            ArrayList<int> list1 = new ArrayList<int>();
+            ArrayList<int> list2 = new ArrayList<int>();
+            ArrayList<int> actual = new ArrayList<int>();
+            list1.Add(1);
+            list1.Add(2);
+            list2.Add(3);
+            list2.Add(4);
+            list1.Remove(2);
+            list2.Remove(4);
+            ArrayList<int> expected = new ArrayList<int>();
+            expected.Add(1);
+            expected.Add(3);
+            //act
+            actual = list1 + list2;
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+
+        [TestMethod]
         public void OperatorPlusOverload_CheckConcatenate_AddTwoLists()
         {
             //arrange
@@ -90,13 +183,56 @@ namespace UnitTestProject2
 
         [TestMethod]
 
+        public void ToString_CheckString_AddPositiveIntegers()
+        {
+            //arrange
+            string expected = "Hello";
+            string actual;
+            //act
+            ArrayList<string> testlist = new ArrayList<string>();
+            testlist.Add("Hello");
+            actual = testlist.ToString();
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+
         public void ToString_Check5Digits_AddPositiveIntegers()
         {
             //arrange
             string expected = "12345";
-            string actual = "";
+            string actual;
             //act
             ArrayList<int> testlist = new ArrayList<int>();
+            testlist.Add(1);
+            testlist.Add(2);
+            testlist.Add(3);
+            testlist.Add(4);
+            testlist.Add(5);
+            actual = testlist.ToString();
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToString_Remove5DigitsCheck5Digits_AddPositiveIntegers()
+        {
+            //arrange
+            string expected = "12345";
+            string actual;
+            //act
+            ArrayList<int> testlist = new ArrayList<int>();
+            testlist.Add(5);
+            testlist.Add(4);
+            testlist.Add(3);
+            testlist.Add(2);
+            testlist.Add(1); 
+            testlist.Remove(1);
+            testlist.Remove(2);
+            testlist.Remove(3);
+            testlist.Remove(4);
+            testlist.Remove(5);
             testlist.Add(1);
             testlist.Add(2);
             testlist.Add(3);

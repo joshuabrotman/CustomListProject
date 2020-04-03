@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class ArrayList<T>
+    public class ArrayList<T> //: IEnumerator<T>
     {
 
         //member variables
@@ -14,6 +15,19 @@ namespace CustomList
         private T[] internalArray;
         private int arrayCapacity;
         private int count;
+        
+        /*public IEnumerator<int> GetEnumerator()
+        {
+            foreach (var item)
+            {
+                yield return item;
+            }
+        }
+
+        IEnumerator<T> IEnumerator.GetEnumerator()
+        {
+            return GetEnumerator();
+        }*/
 
         public int ArrayCapacity {
             get
