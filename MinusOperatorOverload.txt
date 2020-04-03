@@ -1,0 +1,56 @@
+Custom List Class - devCodeCamp
+Joshua Brotman
+
+Minus Operator Overloading
+
+The minus operator overload provides the ability to remove like instances of two lists.
+The difference between two integer lists is highlighted below:
+   
+   
+   Syntax:
+ListA<int> {1, 2, 3, 4, 5, 6}
+ListB<int> {4, 5, 6}
+
+ListA - ListB = {1, 2, 3}
+
+  Parameters
+    Provide two list objects of the same type
+    
+    Object1 - Object2
+  
+  Returns
+      A list of specified type(int or string for example)
+      
+      
+      
+      
+Example code:
+
+            //arrange
+            ArrayList<int> list1 = new ArrayList<int>();
+            ArrayList<int> list2 = new ArrayList<int>();
+            ArrayList<int> expected = new ArrayList<int>();
+            ArrayList<int> actual = new ArrayList<int>();
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+            
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+
+            expected.Add(3);
+            expected.Add(5);
+
+
+
+            //act
+            actual = list1 - list2;
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+            
+            
+Expected output: Returns true
+      
+      
+      
